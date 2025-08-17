@@ -4,9 +4,9 @@ services:
     env: python
     region: singapore
     plan: free
+    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
+    startCommand: python3 main.py
     pythonVersion: 3.11
-    buildCommand: "pip install --upgrade pip && pip install --prefer-binary -r requirements.txt"
-    startCommand: "python3 main.py"
     envVars:
       - key: FIREBASE_KEY_JSON
-        value: "your_json_key_here_or_leave_blank_and_set_in_dashboard"
+        value: ${FIREBASE_KEY_JSON}
