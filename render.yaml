@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: devil-game-worker
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 main.py"
+    envVars:
+      - key: FIREBASE_KEY_JSON
+        value: # Paste your entire serviceAccountKey.json content here in one line, or set it via Render dashboard
