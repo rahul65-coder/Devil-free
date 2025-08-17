@@ -1,11 +1,11 @@
 services:
-  - type: worker
-    name: devil-game-worker
+  - type: web
+    name: devil-game-web
     env: python
-    region: singapore
     plan: free
-    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
-    startCommand: python3 main.py
+    region: singapore
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "python main.py"
     envVars:
       - key: FIREBASE_KEY_JSON
-        value: ${FIREBASE_KEY_JSON}
+        value: YOUR_FULL_JSON_CONTENT_HERE_OR_SET_IN_DASHBOARD
